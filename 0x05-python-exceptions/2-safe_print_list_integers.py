@@ -14,6 +14,6 @@ def safe_print_list_integers(my_list=[], x=0):
         except TypeError as e:
             print(str(e))
             break
-    print()
+    print("")
     return (count)
 
