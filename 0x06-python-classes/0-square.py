@@ -3,5 +3,5 @@
 """Define a class Square."""
 
 class Square:
-    """Represent a class named square."""
-    pass    #An empty block
+    """Create class named square."""
+    pass
