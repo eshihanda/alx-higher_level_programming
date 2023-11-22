@@ -12,10 +12,12 @@ and public instance method."""
 
     @property
     def size(self):
-        return(self.__size)
+        """property for the length of a side of this square"""
+        return self.__size
 
     @size.setter
     def size(self, value):
+        """setter to set the size of the private attribute"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
