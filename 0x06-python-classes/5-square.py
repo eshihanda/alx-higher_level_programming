@@ -12,12 +12,12 @@ and public instance method."""
 
     @property
     def size(self):
-        """property to retrieve size"""
+        """property to retrieve size of the private instance attribute"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """setter to set size"""
+        """setter to set size of the private instance attribute"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -26,7 +26,7 @@ and public instance method."""
 
     def area(self):
         """calculates and returns current square area"""
-        return(self.__size * self.__size)
+        return self.__size * self.__size
 
     def my_print(self):
         """prints square of size self.__size using #"""
