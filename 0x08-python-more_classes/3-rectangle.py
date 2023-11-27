@@ -57,7 +57,7 @@ and can print the rectangle using '#' with print() or str()"""
         if self.__height == 0 or self.__width == 0:
             return r_string
         for i in range(self.__height):
-            r_string += ("#" * self.__width)
+            r_string += "#" * self.__width
             if i < self.__height - 1:
                 r_string += '\n'
         return r_string
