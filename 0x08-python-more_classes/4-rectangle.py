@@ -65,6 +65,6 @@ returns representation of the rectangle to be used by eval()"""
         string = string[:-1]
         return string
     def __repr__(self):
-        """return the string representation of rectangle for eval() """
-        return "Rectangle(" + str(self.__width) + ", "\
-                            + str(self.__height) + ")"
+        """returns string representation of rectangle for eval()"""
+        string = "Rectangle(%s, %s)" % (self.__width, self.__height)
+        return string
