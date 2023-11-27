@@ -4,7 +4,7 @@
 
 class Rectangle:
     """defines class Rectangle with private instance attributes width/height
-and public instance methods to return the rectangle area and perimeter
+and public instance methods to return the rectangle area and primeter
 and can print the rectangle using '#' with print() or str()"""
 
     def __init__(self, width=0, height=0):
@@ -51,13 +51,15 @@ and can print the rectangle using '#' with print() or str()"""
         if self.__width == 0 or self.__height == 0:
             return 0
         return ((2 * self.__width) + (2 * self.__height))
+
     def __str__(self):
-        """ prints representation of rectangle with # """
-        r_string = ""
-        if self.__height == 0 or self.__width == 0:
-            return r_string
-        for i in range(self.__height):
-            r_string += "#" * self.__width
-            if i < self.__height - 1:
-                r_string += '\n'
-        return r_string
+        """returns string representation of rectangle"""
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+        for row in range(self.__height):
+            for column in range(self.__width):
+                string += "#"
+            string += "\n"
+        string = string[:-1]
+        return string
