@@ -3,10 +3,10 @@
 
 
 class Rectangle:
-    """defines class Rectangle with private instance attributes width/height 
-    and public instance methods to return the rectangle area and perimeter
-    and can print the rectangle using '#' with print() or str() and
-    returns representation of the rectangle to be used by eval()"""
+    """defines class Rectangle with private instance attributes width/height
+and public instance methods to return the rectangle area and primeter
+and can print the rectangle using '#' with print() or str()
+and returns representation of the rectangle to be used by eval()"""
 
     def __init__(self, width=0, height=0):
         """instantiates class instance with optional width/height attributes"""
@@ -45,26 +45,26 @@ class Rectangle:
 
     def area(self):
         """calculates area of the rectangle"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """calculates perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return ((2 * self.__width) + (2 * self.__height))
+        return ((2 * self.width) + (2 * self.height))
 
     def __str__(self):
-        """returns string representation of rectangle"""
+        """returns string representation of rectangle for print() and str()"""
         string = ""
         if self.__width == 0 or self.__height == 0:
-            return string
+            return (string)
         for row in range(self.__height):
             for column in range(self.__width):
                 string += "#"
             string += "\n"
         string = string[:-1]
         return string
-    
+
     def __repr__(self):
         """returns string representation of rectangle for eval()"""
         string = "Rectangle(%s, %s)" % (self.__width, self.__height)
