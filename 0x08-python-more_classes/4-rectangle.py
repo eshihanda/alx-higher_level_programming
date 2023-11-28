@@ -4,9 +4,9 @@
 
 class Rectangle:
     """defines class Rectangle with private instance attributes width/height 
-    and public instance methods to return the rectangle area and primeter
-and can print the rectangle using '#' with print() or str() and
-returns representation of the rectangle to be used by eval()"""
+    and public instance methods to return the rectangle area and perimeter
+    and can print the rectangle using '#' with print() or str() and
+    returns representation of the rectangle to be used by eval()"""
 
     def __init__(self, width=0, height=0):
         """instantiates class instance with optional width/height attributes"""
@@ -64,6 +64,7 @@ returns representation of the rectangle to be used by eval()"""
             string += "\n"
         string = string[:-1]
         return string
+    
     def __repr__(self):
         """returns string representation of rectangle for eval()"""
         string = "Rectangle(%s, %s)" % (self.__width, self.__height)
