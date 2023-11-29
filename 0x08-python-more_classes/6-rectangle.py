@@ -4,12 +4,13 @@
 
 class Rectangle:
     """defines class Rectangle with private instance attributes width/height
-and public instance methods to return the rectangle area and perimeter and
-public clas attribute to determine number of instances
+and public instance methods to return the rectangle area and primeter
+and public class attribute to keep track of number of class instances
 and can print the rectangle using '#' with print() or str()
 and returns representation of the rectangle to be used by eval()
 and prints message when deleted"""
-    
+
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
