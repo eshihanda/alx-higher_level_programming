@@ -10,7 +10,6 @@ and can print the rectangle using '#' with print() or str()
 and returns representation of the rectangle to be used by eval()
 and prints message when deleted"""
 
-
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -51,19 +50,19 @@ and prints message when deleted"""
 
     def area(self):
         """calculates area of the rectangle"""
-        return self.width * self.height
+        return self.__width * self.__heigh
 
     def perimeter(self):
         """calculates perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return ((2 * self.width) + (2 * self.height))
+        return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self):
         """returns string representation of rectangle for print() and str()"""
         string = ""
         if self.__width == 0 or self.__height == 0:
-            return (string)
+            return string
         for row in range(self.__height):
             for column in range(self.__width):
                 string += "#"
