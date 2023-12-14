@@ -3,12 +3,12 @@
 
 
 class Base():
-    """creates the base classs that manages 
-    id attribute in all future classes"""
+    """manages id attribute in all future classes"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """initializes to given id or"""
+        """initializes to given id or
+        increases class nb_objects and sets as default id"""
         if id is not None:
             self.id = id
         else:
