@@ -74,3 +74,48 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
+    def area(self):
+        """returns the area calculation of the rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        """prints in stdout the rectangle instance with '#'
+        with offsets x and y taken into account"""
+        for i in range(self.__y):
+            print()
+        for row in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
+
+    def __str__(self):
+        """override __str__ with new string in the format
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            str(self.id), str(self.x), str(self.y),
+            str(self.width), str(self.height))
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute of Rectangle"""
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.width = args[i]
+                if i == 2:
+                    self.height = args[i]
+                if i == 3:
+                    self.x = args[i]
+                if i == 4:
+                    self.y = args[i]
+        else:
+            for kw in kwargs:
+                if kw == "id":
+                    self.id = (kwargs[kw])
+                if kw == "width":
+                    self.width = (kwargs[kw])
+                if kw == "height":
+                    self.height = (kwargs[kw])
+                if kw == "x":
+                    self.x = (kwargs[kw])
+                if kw == "y":
+                    self.y = (kwargs[kw])
