@@ -11,11 +11,6 @@ from models.rectangle import Rectangle
 class Test_a_Rectangle(unittest.TestCase):
     """testing functions for Rectangle class"""
 
-    def test_isinstance(self):
-        """ check if rectangle is instance of Base and Rect """
-        r = Rectangle(1, 1)
-        self.assertIsInstance(r, Rectangle)
-        self.assertIsInstance(r, Base)
     def test_id(self):
         """test initialization of rectangle instance"""
         r1 = Rectangle(10, 2)
@@ -43,3 +38,49 @@ class Test_a_Rectangle(unittest.TestCase):
         self.assertEqual(r4.x, 0)
         self.assertEqual(r4.y, 0)
 
+    def test_errors_attrs(self):
+        """ Trying to pass a string value """
+        with self.assertRaises(TypeError):
+            Rectangle("2", 2, 2, 2, 2)
+
+    def test_error_attrs_2(self):
+        """ Trying to pass a string value """
+        with self.assertRaises(TypeError):
+            Rectangle(2, "2", 2, 2, 2)
+
+    def test_error_attrs_3(self):
+        """ Trying to pass a string value """
+        with self.assertRaises(TypeError):
+            Rectangle(2, 2, "2", 2, 2)
+
+    def test_error_attrs_4(self):
+        """ Trying to pass a string value """
+        with self.assertRaises(TypeError):
+            Rectangle(2, 2, 2, "2", 2)
+
+    def test_value_error(self):
+        """ Trying to pass invalid values """
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1)
+
+    def test_value_error_1(self):
+        """ Trying to pass invalid values """
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_value_error_2(self):
+        """ Trying to pass invalid values """
+        with self.assertRaises(ValueError):
+            Rectangle(1, 1, -1)
+
+    def test_value_error_3(self):
+        """ Trying to pass invalid values """
+        with self.assertRaises(ValueError):
+            new = Rectangle(1, 1, 1, -1)
+
+
+    def test_correct_args(self):
+        """ Test for passing one or no argument """
+        with self.assertRaises(TypeError):
+            Rectangle(10)
+            Rectangle()
