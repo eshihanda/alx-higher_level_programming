@@ -11,6 +11,10 @@ from models.rectangle import Rectangle
 class Test_a_Rectangle(unittest.TestCase):
     """testing functions for Rectangle class"""
 
+    def setUp(self):
+        """ reset nb_objects var to zero before each test """
+        Base._Base__nb_objects = 0
+
     def test_id(self):
         """test initialization of rectangle instance"""
         r1 = Rectangle(10, 2)
@@ -84,3 +88,12 @@ class Test_a_Rectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(10)
             Rectangle()
+    
+    def test_area(self):
+        """test for area method """
+        r = Rectangle(2, 3)
+        self.assertEqual(r.area(), 6)
+        with self.assertRaises(TypeError):
+            r.area(2)
+        with self.assertRaises(TypeError):
+            r.area(2, 3)
