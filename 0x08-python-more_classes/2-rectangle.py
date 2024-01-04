@@ -4,7 +4,7 @@
 
 class Rectangle:
     """defines class Rectangle with private instance attributes width/height
-    and public instance methods to return the rectangle area and primeter"""
+and public instance methods to return the rectangle area and primeter"""
 
     def __init__(self, width=0, height=0):
         """instantiates class instance with optional width/height attributes"""
@@ -43,10 +43,10 @@ class Rectangle:
 
     def area(self):
         """calculates area of the rectangle"""
-        return self.__width * self.__height
-    
+        return self.width * self.height
+
     def perimeter(self):
         """calculates perimeter of the rectangle"""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return ((2 * self.__width) + (2 * self.__height))
+        return ((2 * self.width) + (2 * self.height))
