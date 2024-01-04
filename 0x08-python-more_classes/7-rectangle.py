@@ -79,4 +79,3 @@ and prints message when deleted"""
         """prints goodbye message when rectangle is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
