@@ -3,7 +3,8 @@
 
 
 class Rectangle:
-    """defines class Rectangle with private instance attributes width/height"""
+    """defines class Rectangle with private instance attributes width/height
+    and public instance methods to return the rectangle area and primeter"""
 
     def __init__(self, width=0, height=0):
         """instantiates class instance with optional width/height attributes"""
