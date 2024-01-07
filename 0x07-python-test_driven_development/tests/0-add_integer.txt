@@ -1,0 +1,73 @@
+============================
+doctest for 0-add_integer.py
+============================
+``add_integer()`` returns the sum of its arguments
+
+TEST CASES
+==========================
+
+testing addition of two integers, both single digit
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(3, 5)
+	8
+
+Testing for negative integers
+
+::
+
+	>>> add_integer(-2, -3)
+	-5
+
+It also works for floating point values
+
+::
+	>>> add_integer(3.5, 5)
+	8
+
+::
+
+	>>> add_integer(3, 5.5)
+	8
+
+::
+
+	>>> add_integer(3.5, 5.5)
+	8
+
+Non-numbers
+=============
+
+::
+
+	>>> add_integer("3", 5)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(3, "5")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+::
+
+	>>> a = float("inf")
+	>>> b = 10
+	>>> add_integer(a, b)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+::
+
+	>>> add_integer([6], 1)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+testing how add_integer function handles no arguments
+
+::
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
