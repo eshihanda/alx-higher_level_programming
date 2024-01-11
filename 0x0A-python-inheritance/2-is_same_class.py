@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""defines a function to determine if an object is an 
+"""defines a function to determine if an object is an
 instance of a specified class, otherwise False"""
 
 
