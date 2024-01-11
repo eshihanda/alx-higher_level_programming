@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""defines a function that determines if an object is 
+"""defines a function that determines if an object is
 an instance of a class or class inherited from"""
 
 
