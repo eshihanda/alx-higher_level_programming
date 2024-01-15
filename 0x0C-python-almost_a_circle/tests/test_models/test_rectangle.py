@@ -127,4 +127,27 @@ class Test_a_Rectangle(unittest.TestCase):
         self.assertEqual(output.getvalue(), " ###\n ###\n")
         sys.stdout = sys.__stdout__
 
-
+    def test_printing(self):
+        """ 6 override __str method """
+        r1 = Rectangle(6, 4, 2, 1, 12)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 6/4")
+        r2 = Rectangle(4, 6, 1)
+        self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 4/6")
+        r3 = Rectangle(1, 2)
+        self.assertEqual(r3.__str__(), "[Rectangle] (2) 0/0 - 1/2")
+        output = io.StringIO()
+        sys.stdout = output
+        r1 = Rectangle(6, 4, 2, 1, 12)
+        print(r1)
+        self.assertEqual(output.getvalue(), "[Rectangle] (12) 2/1 - 6/4\n")
+        r2 = Rectangle(4, 6, 1)
+        output = io.StringIO()
+        sys.stdout = output
+        print(r2)
+        self.assertEqual(output.getvalue(), "[Rectangle] (3) 1/0 - 4/6\n")
+        r3 = Rectangle(1, 2)
+        output = io.StringIO()
+        sys.stdout = output
+        print(r3)
+        self.assertEqual(output.getvalue(), "[Rectangle] (4) 0/0 - 1/2\n")
+        sys.stdout = sys.__stdout__
