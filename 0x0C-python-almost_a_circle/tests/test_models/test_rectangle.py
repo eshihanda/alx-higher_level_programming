@@ -254,3 +254,18 @@ class Test_a_Rectangle(unittest.TestCase):
         self.assertEqual(r.height, 4)
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 1)
+
+    def test_dict_repr(self):
+        """ 13 test dict representation of rectangle Rect """
+        dic = {"id": 5, "width": 1, "height": 2, "x": 3, "y": 4}
+        r = Rectangle(1, 2, 3, 4, 5)
+        r_dict = r.to_dictionary()
+        self.assertEqual(r_dict, dic)
+        self.assertEqual(type(r_dict), dict)
+
+        dic = {"width": 1, "height": 2, "x": 0, "y": 0, "id": 1}
+        r1 = Rectangle(1, 2)
+        r_dict = r1.to_dictionary()
+        self.assertEqual(type(r_dict), dict)
+        self.assertEqual(r_dict, dic)
+
