@@ -96,6 +96,7 @@ class Rectangle(Base):
             (self.id), (self.x), (self.y),
             (self.width), (self.height))
         return (str_rec)
+
     def update(self, *args, **kwargs):
         """updates the class rectangle that assigns each argument
         to each atrribute"""
