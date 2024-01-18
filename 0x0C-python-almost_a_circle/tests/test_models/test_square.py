@@ -198,3 +198,17 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.x, 10)
         self.assertEqual(s.y, 10)
 
+    def test_dict_rep(self):
+        """ test dict representation of square """
+        dic = {"size": 1, "x": 2, "y": 3, "id": 4}
+        s = Square(1, 2, 3, 4)
+        s_dict = s.to_dictionary()
+        self.assertEqual(type(s_dict), dict)
+        self.assertEqual(s_dict, dic)
+
+        dic = {"id": 1, "size": 2, "x": 0, "y": 0}
+        s1 = Square(2)
+        s_dict = s1.to_dictionary()
+        self.assertEqual(type(s_dict), dict)
+        self.assertEqual(s_dict, dic)
+
