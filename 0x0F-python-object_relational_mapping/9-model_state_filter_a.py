@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""query first state in State model"""
+"""query all states that contains "a" in State model"""
 
 import sys
 from model_state import Base, State
@@ -14,9 +14,10 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).first()
-    if state is None:
-        print("Nothing")
-    else:
+    query = session.\
+        query(State).\
+        filter(State.name.contains("a")).\
+        order_by(State.id)
+    for state in query:
         print("{}: {}".format(state.id, state.name))
     session.close()
