@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-lists all State objects from the database in ascending order
+prints the first State object from the database
 using SQLAlchemy
 """
 from sys import argv
@@ -15,6 +15,9 @@ if __name__ == "__main__":
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
-        for state in session.query(State).order_by(State.id):
-                print("{}: {}".format(instance.id, instance.name))
+        state = session.query(State).first()
+        if state is not None:
+                print("{}: {}".format(state.id, state.name))
+        else:
+                print("Nothing")
         session.close()
